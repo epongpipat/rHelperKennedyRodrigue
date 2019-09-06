@@ -13,7 +13,7 @@ get_func_subj_dir_list <- function(wave = 1) {
   files <- list.files(dir, "3tb*") %>%
     str_subset(., ".mat", T)
   
-  path <- paste0(dir, files)
+  path <- paste0(dir, files, "/")
   
   return(path)
 }
