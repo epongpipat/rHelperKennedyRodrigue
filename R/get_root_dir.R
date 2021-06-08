@@ -7,9 +7,9 @@
 get_root_dir <- function() {
   os <- get_os()
   if (os == "Darwin") {
-    dir <- "/Volumes/shared"
+    root_dir <- "/Volumes"
   } else if (os == "Linux") {
-    dir <- "/raid/data/shared"
+    root_dir <- "/raid/data"
   } 
-  return(dir)
+  return(root_dir)
 }
