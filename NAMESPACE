@@ -2,3 +2,10 @@
 
 export(get_os)
 export(get_root_dir)
+export(plot_longitudinal_raw_by_age)
+export(plot_longitudinal_slopes_by_age)
+import(broom)
+import(dplyr)
+import(ggplot2)
+import(purrr)
+import(tidyr)
