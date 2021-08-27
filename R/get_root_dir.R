@@ -10,6 +10,8 @@ get_root_dir <- function() {
     root_dir <- "/Volumes"
   } else if (os == "Linux") {
     root_dir <- "/raid/data"
-  } 
+  } else {
+    root_dir <- NULL
+  }
   return(root_dir)
 }
