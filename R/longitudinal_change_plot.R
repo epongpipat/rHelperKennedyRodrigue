@@ -23,7 +23,7 @@ plot_longitudinal_raw_by_age <- function(data_long, variable, age_var = 'age', s
     unnest(cols = estimates) %>%
     mutate(term = ifelse(term == '(Intercept)', 'b0', 'b1')) %>%
     pivot_wider(., id_cols = all_of(c(sub_var, age_var, wave_var, variable)), names_from = "term", values_from = "estimate") %>%
-    mutate(y_pred = b0 + b1*AGE)
+    mutate(y_pred = b0 + b1 * eval(as.name(age_var)))
   max_value <- max(abs(na.omit(df_fig$b1)))
   fig <- ggplot(df_fig, aes(x = eval(as.name(age_var)), y = as.numeric(eval(as.name(variable))), group = eval(as.name(sub_var)), color = b1)) +
     geom_line(size = 1) +
@@ -65,7 +65,7 @@ plot_longitudinal_slopes_by_age <- function(data_long, variable, age_var = 'age'
     unnest(cols = estimates) %>%
     mutate(term = ifelse(term == '(Intercept)', 'b0', 'b1')) %>%
     pivot_wider(., id_cols = all_of(c(sub_var, age_var, wave_var, variable)), names_from = "term", values_from = "estimate") %>%
-    mutate(y_pred = b0 + b1*AGE)
+    mutate(y_pred = b0 + b1 * eval(as.name(age_var)))
   max_value <- max(abs(na.omit(df_fig$b1)))
   fig <- ggplot(df_fig, aes(x = eval(as.name(age_var)), y = as.numeric(eval(as.name(variable))))) +
     geom_line(aes(y = y_pred, color = b1, group = eval(as.name(sub_var))), size = 1) +
