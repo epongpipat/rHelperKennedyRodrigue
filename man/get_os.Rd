@@ -12,3 +12,7 @@ get_os()
 \description{
 get_os
 }
+\examples{
+get_os()
+}
+\concept{helper}

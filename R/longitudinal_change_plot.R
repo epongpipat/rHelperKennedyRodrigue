@@ -5,7 +5,7 @@
 #' @param age_var 
 #' @param sub_var 
 #' @param wave_var 
-#'
+#' @concept visualization
 #' @return
 #' @export
 #' @import ggplot2 purrr tidyr broom dplyr
@@ -47,7 +47,7 @@ plot_longitudinal_raw_by_age <- function(data_long, variable, age_var = 'age', s
 #' @param age_var 
 #' @param sub_var 
 #' @param wave_var 
-#'
+#' @concept visualization
 #' @return
 #' @export
 #' @import ggplot2 purrr tidyr broom dplyr

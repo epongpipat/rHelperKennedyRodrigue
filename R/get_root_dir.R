@@ -1,9 +1,10 @@
 #' get_root_dir
-#'
+#' @concept helper
 #' @return
 #' @export
 #'
 #' @examples
+#' get_root_dir()
 get_root_dir <- function() {
   os <- get_os()
   if (os == "Darwin") {

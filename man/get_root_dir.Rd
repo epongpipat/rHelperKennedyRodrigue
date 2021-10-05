@@ -12,3 +12,7 @@ get_root_dir()
 \description{
 get_root_dir
 }
+\examples{
+get_root_dir()
+}
+\concept{helper}
