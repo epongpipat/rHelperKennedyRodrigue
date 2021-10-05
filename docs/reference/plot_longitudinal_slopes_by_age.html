@@ -125,32 +125,37 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data_long</th>
-      <td></td>
+      <td><p>Data in person-period format</p></td>
     </tr>
     <tr>
       <th>variable</th>
-      <td></td>
+      <td><p>Variable to plot</p></td>
     </tr>
     <tr>
       <th>age_var</th>
-      <td></td>
+      <td><p>Name of age variable</p></td>
     </tr>
     <tr>
       <th>sub_var</th>
-      <td></td>
+      <td><p>Name of subject ID variable</p></td>
     </tr>
     <tr>
       <th>wave_var</th>
-      <td></td>
+      <td><p>Name of wave variable</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    
+    <p>plot with y-axis of variable and x-axis of age. lines and colors are estimated slopes within sub_vars (i.e., slopes represent change in variable over time)</p>
 
-
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='va'>df_fake</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>sub <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>3</span>, <span class='fl'>3</span><span class='op'>)</span>,
+                 wave <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span><span class='op'>)</span>,
+                 age <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>50</span>, <span class='fl'>60</span>, <span class='fl'>70</span>, <span class='fl'>20</span>, <span class='fl'>35</span>, <span class='fl'>40</span>, <span class='fl'>35</span>, <span class='fl'>37</span>, <span class='fl'>40</span><span class='op'>)</span>,
+                 test_var <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>60</span>, <span class='fl'>55</span>, <span class='fl'>50</span>, <span class='fl'>30</span>, <span class='fl'>40</span>, <span class='fl'>35</span>, <span class='fl'>45</span>, <span class='fl'>43</span>, <span class='fl'>40</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>plot_longitudinal_slopes_by_age</span><span class='op'>(</span><span class='va'>df_fake</span>, <span class='st'>'test_var'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: essentially perfect fit: summary may be unreliable</span></div><div class='output co'>#&gt; <span class='warning'>Warning: essentially perfect fit: summary may be unreliable</span></div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using formula 'y ~ x'</span></div><div class='img'><img src='plot_longitudinal_slopes_by_age-1.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

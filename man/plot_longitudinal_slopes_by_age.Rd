@@ -13,20 +13,27 @@ plot_longitudinal_slopes_by_age(
 )
 }
 \arguments{
-\item{data_long}{}
+\item{data_long}{Data in person-period format}
 
-\item{variable}{}
+\item{variable}{Variable to plot}
 
-\item{age_var}{}
+\item{age_var}{Name of age variable}
 
-\item{sub_var}{}
+\item{sub_var}{Name of subject ID variable}
 
-\item{wave_var}{}
+\item{wave_var}{Name of wave variable}
 }
 \value{
-
+plot with y-axis of variable and x-axis of age. lines and colors are estimated slopes within sub_vars (i.e., slopes represent change in variable over time)
 }
 \description{
 plot_longitudinal_slopes_by_age
+}
+\examples{
+df_fake <- data.frame(sub = c(1, 1, 1, 2, 2, 2, 3, 3, 3),
+                 wave = c(1, 2, 3, 1, 2, 3, 1, 2, 3),
+                 age = c(50, 60, 70, 20, 35, 40, 35, 37, 40),
+                 test_var = c(60, 55, 50, 30, 40, 35, 45, 43, 40))
+plot_longitudinal_slopes_by_age(df_fake, 'test_var')
 }
 \concept{visualization}

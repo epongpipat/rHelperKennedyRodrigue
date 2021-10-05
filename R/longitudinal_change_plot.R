@@ -1,15 +1,20 @@
 #' plot_longitudinal_raw_by_age
 #'
-#' @param data_long 
-#' @param variable 
-#' @param age_var 
-#' @param sub_var 
-#' @param wave_var 
+#' @param data_long Data in person-period format
+#' @param variable Variable to plot
+#' @param age_var Name of age variable
+#' @param sub_var Name of subject ID variable
+#' @param wave_var Name of wave variable
 #' @concept visualization
-#' @return
+#' @return plot with y-axis of variable and x-axis of age. lines are connected within sub_var and colors are estimated slopes (i.e., estimated slopes represent change in variable per year)
 #' @export
-#' @import ggplot2 purrr tidyr broom dplyr
+#' @import ggplot2 purrr tidyr broom dplyr glue
 #' @examples
+#' df_fake <- data.frame(sub = c(1, 1, 1, 2, 2, 2, 3, 3, 3),
+#'                  wave = c(1, 2, 3, 1, 2, 3, 1, 2, 3),
+#'                  age = c(50, 60, 70, 20, 35, 40, 35, 37, 40),
+#'                  test_var = c(60, 55, 50, 30, 40, 35, 45, 43, 40))
+#' plot_longitudinal_raw_by_age(df_fake, 'test_var')
 plot_longitudinal_raw_by_age <- function(data_long, variable, age_var = 'age', sub_var = 'sub', wave_var = 'wave') {
   df_fig <- data_long %>%
     group_by(eval(as.name(sub_var))) %>%
@@ -42,16 +47,21 @@ plot_longitudinal_raw_by_age <- function(data_long, variable, age_var = 'age', s
 
 #' plot_longitudinal_slopes_by_age
 #'
-#' @param data_long 
-#' @param variable 
-#' @param age_var 
-#' @param sub_var 
-#' @param wave_var 
+#' @param data_long Data in person-period format
+#' @param variable Variable to plot
+#' @param age_var Name of age variable
+#' @param sub_var Name of subject ID variable
+#' @param wave_var Name of wave variable
 #' @concept visualization
-#' @return
+#' @return plot with y-axis of variable and x-axis of age. lines and colors are estimated slopes within sub_vars (i.e., slopes represent change in variable over time)
 #' @export
 #' @import ggplot2 purrr tidyr broom dplyr
 #' @examples
+#' df_fake <- data.frame(sub = c(1, 1, 1, 2, 2, 2, 3, 3, 3),
+#'                  wave = c(1, 2, 3, 1, 2, 3, 1, 2, 3),
+#'                  age = c(50, 60, 70, 20, 35, 40, 35, 37, 40),
+#'                  test_var = c(60, 55, 50, 30, 40, 35, 45, 43, 40))
+#' plot_longitudinal_slopes_by_age(df_fake, 'test_var')
 plot_longitudinal_slopes_by_age <- function(data_long, variable, age_var = 'age', sub_var = 'sub', wave_var = 'wave') {
   df_fig <- data_long %>%
     group_by(eval(as.name(sub_var))) %>%
