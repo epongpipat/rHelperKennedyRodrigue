@@ -11,6 +11,8 @@ get_root_dir <- function() {
     root_dir <- "/Volumes"
   } else if (os == "Linux") {
     root_dir <- "/raid/data"
+  } else if (os == "Windows") {
+    root_dir <- "//cvlkrfs"
   } else {
     root_dir <- NULL
   }
