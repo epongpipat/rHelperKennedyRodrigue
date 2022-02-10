@@ -4,7 +4,7 @@
 #' @concept helper
 #' @return
 #' @export
-#' @importFrom stringer str_remove
+#' @importFrom stringr str_remove
 #' @examples
 get_ses_from_airc_id <- function(airc_id) {
   airc_id_number <- as.numeric(str_remove(airc_id, '3tb'))
