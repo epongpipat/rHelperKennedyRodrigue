@@ -10,7 +10,7 @@
 #' @examples
 #' get_ext('test.nii.gz')
 get_ext <- function(path) {
-  path %>%
+  as.character(path) %>%
     basename() %>%
     str_split('[[.]]') %>%
     unlist() %>%
