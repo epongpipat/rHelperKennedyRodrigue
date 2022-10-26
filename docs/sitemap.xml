@@ -28,7 +28,13 @@
     <loc>/reference/get_ses_from_airc_id.html</loc>
   </url>
   <url>
+    <loc>/reference/get_ses_from_path.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_sub_from_airc_id.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_sub_from_path.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
