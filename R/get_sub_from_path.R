@@ -13,6 +13,9 @@ get_sub_from_path <- function(path) {
     str_split('/') %>%
     unlist() %>%
     str_subset('sub-') %>%
+    str_split('_') %>%
+    unlist() %>%
+    str_subset('sub-') %>%
     .[[1]] %>%
     str_split('-') %>%
     unlist() %>%
