@@ -9,7 +9,7 @@
 #' @examples
 #' get_ses_from_path('/bids/sub-eep/ses-01/func/sub-eep_ses-01_bold.nii.gz')
 get_ses_from_path <- function(path) {
-  path <- 'sub-test_ses-02_bold.nii.gz'
+  #path <- 'sub-test_ses-02_bold.nii.gz'
   ses <- path %>%
     str_split('/') %>%
     unlist() %>%
