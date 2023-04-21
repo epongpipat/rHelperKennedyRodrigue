@@ -44,18 +44,23 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_root_dir</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">get_root_dir</span><span class="op">(</span><span class="va">directory</span><span class="op">)</span></code></pre></div>
     </div>
 
+    <div id="arguments">
+    <h2>Arguments</h2>
+    <dl><dt>directory</dt>
+<dd><p>can be either kmk, kmr, or kenrod</p></dd>
+</dl></div>
     <div id="value">
     <h2>Value</h2>
-    
+    <p>root_dir</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">get_root_dir</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/Volumes"</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in directory %in% c("kmk", "kmr", "kenrod"):</span> argument "directory" is missing, with no default</span>
 </code></pre></div>
     </div>
   </div>

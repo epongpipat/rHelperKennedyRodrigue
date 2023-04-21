@@ -4,10 +4,13 @@
 \alias{get_root_dir}
 \title{get_root_dir}
 \usage{
-get_root_dir()
+get_root_dir(directory)
+}
+\arguments{
+\item{directory}{can be either kmk, kmr, or kenrod}
 }
 \value{
-
+root_dir
 }
 \description{
 get_root_dir
