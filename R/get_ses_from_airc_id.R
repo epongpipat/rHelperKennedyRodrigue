@@ -4,16 +4,20 @@
 #' @concept helper
 #' @return
 #' @export
-#' @importFrom stringr str_remove
+#' @importFrom glue glue
 #' @examples
 get_ses_from_airc_id <- function(airc_id) {
-  airc_id_number <- as.numeric(str_remove(airc_id, '3tb'))
-  if (airc_id_number < 4188) {
-    ses <- 1
-  } else if ((airc_id_number > 4188) & (airc_id_number < 8000)) {
-    ses <- 2
-  } else if ((airc_id_number > 8000)) {
-    ses <- 3
+  in_ids <- glue("{get_root_dir('kenrod')}/incoming/ids_long-format.csv")
+  df <- read.csv(in_ids) 
+  idx <- which(df$mri_id == airc_id)
+  if (length(idx) == 0) {
+    warning('no study ID found for this AIRC ID')
+    ses <- NA
+  } else if (length(idx) == 1) {
+    ses <- df[[idx, 'wave']]
+  } else if (length(idx) > 1) {
+    warning('more than 1 session found for this AIRC ID')
+    ses <- NA
   }
   return(ses)
 }
