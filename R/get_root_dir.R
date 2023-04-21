@@ -1,20 +1,31 @@
 #' get_root_dir
 #' @concept helper
-#' @return
+#' @param directory can be either kmk, kmr, or kenrod
+#' @return root_dir
 #' @export
-#'
+#' @importFrom dplyr %>%
+#' @importFrom dplyr filter
 #' @examples
 #' get_root_dir()
-get_root_dir <- function() {
-  os <- get_os()
-  if (os == "Darwin") {
-    root_dir <- "/Volumes"
-  } else if (os == "Linux") {
-    root_dir <- "/raid/data"
-  } else if (os == "Windows") {
-    root_dir <- "//cvlkrfs"
-  } else {
-    root_dir <- NULL
+get_root_dir <- function(directory) {
+  
+  if (!(directory %in% c('kmk', 'kmr', 'kenrod'))) {
+    stop("directory must either be: kmk, kmr, or kenrod")
   }
-  return(root_dir)
+  
+  df <- read.csv(system.file('root_dir.csv', package = 'rHelperKennedyRodrigue'))
+  os <- get_os()
+  
+  df_sub <- df %>%
+    filter(os == get_os(),
+           dir == directory)
+  
+  if (os == 'Linux') {
+    HOSTNAME <- system("echo ${HOSTNAME}", intern = TRUE)
+    df_sub <- df_sub %>%
+      filter(hostname == HOSTNAME)
+  }
+  
+  return(as.character(df_sub$path))
+
 }
