@@ -11,12 +11,12 @@ get_sub_from_airc_id <- function(airc_id) {
   df <- read.csv(in_ids) 
   idx <- which(df$mri_id == airc_id)
   if (length(idx) == 0) {
-    warning('no study ID found for this AIRC ID')
+    warning(glue('no study ID found for this AIRC ID ({airc_id})'))
     sub <- NA
   } else if (length(idx) == 1) {
     sub <- df[[idx, 'study_id']]
   } else if (length(idx) > 1) {
-    warning('more than 1 study ID found for this AIRC ID')
+    warning(glue('more than 1 study ID found for this AIRC ID ({airc_id})'))
     sub <- NA
   }
   return(sub)
