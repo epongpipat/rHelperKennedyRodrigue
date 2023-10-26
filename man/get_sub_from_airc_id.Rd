@@ -13,6 +13,6 @@ get_sub_from_airc_id(airc_id)
 
 }
 \description{
-get_sub_from_airc_id
+obtain subject id (`sub`) from AIRC ID (`airc_id`)
 }
 \concept{helper}

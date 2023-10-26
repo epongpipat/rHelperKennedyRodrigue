@@ -5,7 +5,6 @@
 #' @return
 #' @export
 #' @importFrom glue glue
-#' @examples
 get_ses_from_airc_id <- function(airc_id) {
   in_ids <- glue("{get_root_dir('kenrod')}/incoming/ids_long-format.csv")
   df <- read.csv(in_ids) 

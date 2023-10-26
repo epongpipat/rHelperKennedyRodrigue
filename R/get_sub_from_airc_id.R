@@ -1,11 +1,10 @@
 #' @title get_sub_from_airc_id
-#' @description 
+#' @description obtain subject id (`sub`) from AIRC ID (`airc_id`)
 #' @param airc_id AIRC ID
 #' @concept helper
 #' @return
 #' @export
 #' @importFrom glue glue
-#' @examples
 get_sub_from_airc_id <- function(airc_id) {
   in_ids <- glue("{get_root_dir('kenrod')}/incoming/ids_long-format.csv")
   df <- read.csv(in_ids) 
