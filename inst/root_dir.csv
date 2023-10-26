@@ -11,6 +11,6 @@ Linux,login-01,kenrod,/mfs/cvl/groups/kenrod
 Darwin,local,kmk,/Volumes/kennedy
 Darwin,local,kmr,/Volumes/rodrigue
 Darwin,local,kenrod,/Volumes/kenrod
-Windows_NT,local,kmk,//smb.cvl.utdallas.edu/kennedy
-Windows_NT,local,kmr,//smb.cvl.utdallas.edu/rodrigue
-Windows_NT,local,kenrod,//smb.cvl.utdallas.edu/kenrod
+Windows,local,kmk,//smb.cvl.utdallas.edu/kennedy
+Windows,local,kmr,//smb.cvl.utdallas.edu/rodrigue
+Windows,local,kenrod,//smb.cvl.utdallas.edu/kenrod
