@@ -6,7 +6,7 @@
 #' @export
 #' @importFrom glue glue
 get_ses_from_airc_id <- function(airc_id) {
-  in_ids <- glue("{get_root_dir('kenrod')}/incoming/ids_long-format.csv")
+  in_ids <- glue("{get_root_dir('kenrod')}/study-jlbs/sourcedata/ids_long-format.csv")
   df <- read.csv(in_ids) 
   idx <- which(df$mri_id == airc_id)
   if (length(idx) == 0) {
