@@ -16,6 +16,9 @@
     <loc>/reference/get_airc_id_from_path.html</loc>
   </url>
   <url>
+    <loc>/reference/get_descriptives_table.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_ext.html</loc>
   </url>
   <url>
@@ -44,6 +47,9 @@
   </url>
   <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/meanz.html</loc>
   </url>
   <url>
     <loc>/reference/plot_longitudinal_raw_by_age.html</loc>
