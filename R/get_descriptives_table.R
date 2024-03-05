@@ -9,21 +9,11 @@
 #' @importFrom glue glue
 #' @export
 get_descriptives_table <- function(data, grouping_variable, grouping_values, variables = c('n', 'age', 'female', 'edu_years', 'cesd', 'mmse')) {
-  df_demo <- data.frame(variable = NA,
-                        'overall' = NA)
+  df_demo <- data.frame(variable = NA)
   for (i in 1:length(variables)) {
     df_demo[i, 'variable'] <- variables[i]
-    if (variables[i] == 'n') {
-      df_demo[i, 'overall'] <- nrow(data)
-    } else if (variables[i] == 'female') {
-      n <- sum(data$female)
-      p <- mean(data$female) * 100
-      df_demo[i, 'overall'] <- glue("{sprintf('%.0f', n)} ({sprintf('%.2f', p)}%)")
-    } else {
-      m <- mean(data[, variables[i]], na.rm = TRUE)
-      s <- sd(data[, variables[i]], na.rm = TRUE)
-      df_demo[i, 'overall'] <- sprintf("%.2f (%.2f)", m, s)
-    }
+    
+    # groupings
     for (j in 1:length(grouping_values)) {
       df_temp <- data[data[, grouping_variable] == grouping_values[j], ]
       if (variables[i] == 'n') {
@@ -37,6 +27,19 @@ get_descriptives_table <- function(data, grouping_variable, grouping_values, var
         s <- sd(df_temp[, variables[i]], na.rm = TRUE)
         df_demo[i, grouping_values[j]] <- sprintf("%.2f (%.2f)", m, s)
       }
+    }
+
+    # overall
+    if (variables[i] == 'n') {
+      df_demo[i, 'overall'] <- nrow(data)
+    } else if (variables[i] == 'female') {
+      n <- sum(data$female)
+      p <- mean(data$female) * 100
+      df_demo[i, 'overall'] <- glue("{sprintf('%.0f', n)} ({sprintf('%.2f', p)}%)")
+    } else {
+      m <- mean(data[, variables[i]], na.rm = TRUE)
+      s <- sd(data[, variables[i]], na.rm = TRUE)
+      df_demo[i, 'overall'] <- sprintf("%.2f (%.2f)", m, s)
     }
   }
   return(df_demo)
