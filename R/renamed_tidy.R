@@ -6,7 +6,7 @@
 #' @export
 #' @importFrom broom tidy
 #' @import dplyr
-#' @examples renamed_tidy(lm())
+#' @examples renamed_tidy(lm(salary ~ yrs.since.phd, carData::Salaries))
 renamed_tidy <- function(model) {
   allowed_classes <- c('lm', 'htest', 'anova')
   if (sum(attributes(model)$class %in% allowed_classes) == 0) {

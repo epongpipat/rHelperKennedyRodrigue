@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>plot_longitudinal_slopes_by_age — plot_longitudinal_slopes_by_age • rHelperKennedyRodrigue</title>
+<title>apa_table — apa_table • rHelperKennedyRodrigue</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="plot_longitudinal_slopes_by_age — plot_longitudinal_slopes_by_age" />
-<meta property="og:description" content="plot_longitudinal_slopes_by_age" />
+<meta property="og:title" content="apa_table — apa_table" />
+<meta property="og:description" content="covert a data table to APA format" />
 
 
 
@@ -103,65 +103,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>plot_longitudinal_slopes_by_age</h1>
+    <h1>apa_table</h1>
     
-    <div class="hidden name"><code>plot_longitudinal_slopes_by_age.Rd</code></div>
+    <div class="hidden name"><code>apa_table.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>plot_longitudinal_slopes_by_age</p>
+    <p>covert a data table to APA format</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot_longitudinal_slopes_by_age</span><span class='op'>(</span>
-  <span class='va'>data_long</span>,
-  <span class='va'>variable</span>,
-  age_var <span class='op'>=</span> <span class='st'>"age"</span>,
-  sub_var <span class='op'>=</span> <span class='st'>"sub"</span>,
-  wave_var <span class='op'>=</span> <span class='st'>"wave"</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>apa_table</span><span class='op'>(</span><span class='va'>table</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>data_long</th>
-      <td><p>Data in person-period format</p></td>
-    </tr>
-    <tr>
-      <th>variable</th>
-      <td><p>Variable to plot</p></td>
-    </tr>
-    <tr>
-      <th>age_var</th>
-      <td><p>Name of age variable</p></td>
-    </tr>
-    <tr>
-      <th>sub_var</th>
-      <td><p>Name of subject ID variable</p></td>
-    </tr>
-    <tr>
-      <th>wave_var</th>
-      <td><p>Name of wave variable</p></td>
+      <th>table</th>
+      <td><p>input data table</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>plot with y-axis of variable and x-axis of age. lines and colors are estimated slopes within sub_vars (i.e., slopes represent change in variable over time)</p>
+    <p>gt object</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>df_fake</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>sub <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>3</span>, <span class='fl'>3</span><span class='op'>)</span>,
-                 wave <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span><span class='op'>)</span>,
-                 age <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>50</span>, <span class='fl'>60</span>, <span class='fl'>70</span>, <span class='fl'>20</span>, <span class='fl'>35</span>, <span class='fl'>40</span>, <span class='fl'>35</span>, <span class='fl'>37</span>, <span class='fl'>40</span><span class='op'>)</span>,
-                 test_var <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>60</span>, <span class='fl'>55</span>, <span class='fl'>50</span>, <span class='fl'>30</span>, <span class='fl'>40</span>, <span class='fl'>35</span>, <span class='fl'>45</span>, <span class='fl'>43</span>, <span class='fl'>40</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'>plot_longitudinal_slopes_by_age</span><span class='op'>(</span><span class='va'>df_fake</span>, <span class='st'>'test_var'</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: There were 2 warnings in `mutate()`.</span>
-#&gt; <span class='warning'>The first warning was:</span>
-#&gt; <span class='warning'><span style='color: #00BBBB;'>ℹ</span> In argument: `estimates = map(...)`.</span>
-#&gt; <span class='warning'><span style='color: #00BBBB;'>ℹ</span> In group 1: `eval(as.name(sub_var)) = 1`.</span>
-#&gt; <span class='warning'>Caused by warning in `summary.lm()`:</span>
-#&gt; <span class='warning'><span style='color: #BBBB00;'>!</span> essentially perfect fit: summary may be unreliable</span>
-#&gt; <span class='warning'><span style='color: #00BBBB;'>ℹ</span> Run `dplyr::last_dplyr_warnings()` to see the 1 remaining warning.</span></div><div class='output co'>#&gt; <span class='message'>`geom_smooth()` using formula = 'y ~ x'</span></div><div class='img'><img src='plot_longitudinal_slopes_by_age-1.png' alt='' width='700' height='433' /></div></pre>
+    <p>black border on the top and bottom of the columns, black border on the bottom of the table, and font is Times size 12</p>
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
