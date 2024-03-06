@@ -1,7 +1,7 @@
 Package: rHelperKennedyRodrigue
 Type: Package
 Title: R Functions for Kennedy-Rodrigue Lab
-Version: 0.6.0
+Version: 0.7.0
 Author: Ekarin Pongpipat <eep170030@utdallas.edu>
 Maintainer: Ekarin Pongpipat <eep170030@utdallas.edu>
 Description: Helpful R functions for working with Dr. Kennedy's and Dr. Rodrigue's lab's data and server
