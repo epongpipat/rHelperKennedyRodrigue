@@ -24,7 +24,7 @@ renamed_tidy <- function(model) {
                op = as.character(model[["terms"]][[1]])) %>%
         select(lh, op, rh, b, se, t, p)
   } else if (sum(attributes(model)$class == 'anova') >= 1) {
-    df_temp <- df_tidy %>%
+    df_tidy <- df_tidy %>%
       rename(rh = term,
              ss = sumsq,
              df = df,
@@ -40,6 +40,5 @@ renamed_tidy <- function(model) {
              df = parameter,
              p = p.value)
   }
-  
   return(df_tidy)
 }
