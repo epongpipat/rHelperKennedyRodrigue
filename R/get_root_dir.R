@@ -5,6 +5,7 @@
 #' @export
 #' @importFrom dplyr %>%
 #' @importFrom dplyr filter
+#' @importFrom glue glue
 #' @examples
 #' get_root_dir()
 get_root_dir <- function(directory) {
@@ -25,6 +26,15 @@ get_root_dir <- function(directory) {
     df_sub <- df_sub %>%
       filter(hostname == HOSTNAME)
   }
+
+  if (nrow(df_sub) == 0) {
+    stop("no root directory found")
+  }
+
+  if (!file.exists(df_sub$path)) {
+    stop(glue("root directory does not exist ({df_sub$path})"))
+  }
+
   
   return(as.character(df_sub$path))
 
