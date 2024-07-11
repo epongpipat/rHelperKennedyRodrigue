@@ -5,10 +5,10 @@
 #' @param y_var 
 #' @param age_label 
 #' @param y_label 
-#'
-#' @return
+#' @concept visualization
+#' @return plot with x-axis of age and y-axis of y_var
 #' @export
-#'
+#' @import ggplot2
 #' @examples
 #' df_fake <- data.frame(age = sample(20:100, 100, TRUE),
 #'                       outcome = sample(1:100/100, 100, TRUE))
