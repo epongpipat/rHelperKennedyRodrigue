@@ -31,9 +31,14 @@ get_root_dir <- function(directory) {
     stop("no root directory found")
   }
 
+  if (!file.exists(df_sub$path) & os == 'Darwin') {
+    # this is not the best way to do this, but it works for now
+    df_sub$path <- path.expand(gsub("/Volumes/kenrod", "~/mnt/cvl/kenrod", df_sub$path))
+  }
+
   if (!file.exists(df_sub$path)) {
     stop(glue("root directory does not exist ({df_sub$path})"))
-  }
+  } 
 
   
   return(as.character(df_sub$path))
