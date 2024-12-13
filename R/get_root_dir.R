@@ -22,7 +22,7 @@ get_root_dir <- function(directory) {
            dir == directory)
   
   if (os == 'Linux') {
-    HOSTNAME <- system("echo ${HOSTNAME}", intern = TRUE)
+    HOSTNAME <- system("echo $(hostname)", intern = TRUE)
     df_sub <- df_sub %>%
       filter(hostname == HOSTNAME)
   }
