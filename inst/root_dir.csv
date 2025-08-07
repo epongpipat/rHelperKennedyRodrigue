@@ -32,6 +32,6 @@ Linux,vdi,kenrod,/mfs/cvl/groups/kenrod
 Darwin,local,kmk,/Volumes/kennedy
 Darwin,local,kmr,/Volumes/rodrigue
 Darwin,local,kenrod,/Volumes/kenrod
-Windows,local,kmk,//smb.cvl.utdallas.edu/groups/kennedy
-Windows,local,kmr,//smb.cvl.utdallas.edu/groups/rodrigue
-Windows,local,kenrod,//smb.cvl.utdallas.edu/groups/kenrod
+Windows,local,kmk,//cvl-share.cvl.utdallas.edu/kennedy
+Windows,local,kmr,//cvl-share.cvl.utdallas.edu/rodrigue
+Windows,local,kenrod,//cvl-share.cvl.utdallas.edu/kenrod
